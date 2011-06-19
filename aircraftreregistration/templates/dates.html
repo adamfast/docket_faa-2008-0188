@@ -6,6 +6,8 @@
 
 N-Number: N{{ aircraft.n_number }}<br>
 Issued Date: {{ aircraft.certificate_issue_date }}<br>
+{% if aircraft.expiration_date %}The FAA now shows this as your expiration date: {{ aircraft.expiration_date }} (if you've already submitted)<br>{% endif %}
+According to the docket the following would apply according to your certificate issue date:<br>
 Expiration Date: {{ aircraft.certificate_issue_date|expiration }}<br>
 Apply Window Opens: {{ aircraft.certificate_issue_date|reapplication_start }}<br>
 Apply Window Closes: {{ aircraft.certificate_issue_date|reapplication_end }}<br>

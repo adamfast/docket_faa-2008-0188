@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 {% load reregistration %}
 
 N-Number: N{{ aircraft.n_number }}<br>
@@ -5,3 +9,7 @@ Issued Date: {{ aircraft.certificate_issue_date }}<br>
 Expiration Date: {{ aircraft.certificate_issue_date|expiration }}<br>
 Apply Window Opens: {{ aircraft.certificate_issue_date|reapplication_start }}<br>
 Apply Window Closes: {{ aircraft.certificate_issue_date|reapplication_end }}<br>
+<br>
+Specifics on the rule and HOW the FAA will be implementing it are available at <a href='http://www.faa.gov/licenses_certificates/aircraft_certification/aircraft_registry/reregistration/'>http://www.faa.gov/licenses_certificates/aircraft_certification/aircraft_registry/reregistration/</a>.<br>
+
+{% endblock content %}

@@ -1,1 +1,14 @@
-You need to reregister.
+{% extends "base.html" %}
+
+{% block content %}
+
+The FAA has announced that all aircraft operators <a href='http://www.faa.gov/licenses_certificates/aircraft_certification/aircraft_registry/reregistration/'>need to reregister their aircraft</a> every three years to aid in keeping their databases up to date. But I didn't have the airworthiness certificates for the airplanes I fly available, so I put together a project to figure out the necessary dates for me based on the FAA's released aircraft database full of N-numbers.
+<br><br>
+<form onsubmit="javascript:window.location.href='{{ url }}/' + window.document.forms[0].n_number.value; return false;">
+  N-Number:&nbsp;&nbsp;<input type='textbox' name='n_number'>&nbsp;&nbsp;
+  <input type='submit' value='Look Up'>
+</form>
+<br>
+Specifics on the rule and HOW the FAA will be implementing it are available at <a href='http://www.faa.gov/licenses_certificates/aircraft_certification/aircraft_registry/reregistration/'>http://www.faa.gov/licenses_certificates/aircraft_certification/aircraft_registry/reregistration/</a>.<br>
+<br>
+{% endblock content %}

@@ -9,4 +9,7 @@ def find_dates(request, n_number):
     return render_to_response('dates.html', {'aircraft': aircraft,})
 
 def index(request):
-    return render_to_response('index.html', {})
+    return render_to_response('index.html', {'url': 'http://rereg.wxgk.net'})
+
+def tech(request):
+    return render_to_response('tech.html', {})
